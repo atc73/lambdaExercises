@@ -16,10 +16,16 @@ public class Lambda {
 
     public static void main(String[] args) {
 
+        //Nombre de matières
         int nbOfSubjects = 3;
+
+        //Nombre d'étudiants
         int nbOfStudents = questionAnswer("Combien d'élèves ?");
+
+        //Création du tableau des étudiants et des matières
         ArrayList<Integer>[][] gradesArray = new ArrayList[nbOfStudents][nbOfSubjects];
 
+        //Remplisage du tableau avec les notes pour chaque élève et chaque matière
         for (int i = 0; i < nbOfStudents; i++) {
             System.out.println("Elève n° : " + (i + 1));
             for (int j = 0; j < nbOfSubjects; j++) {
@@ -33,6 +39,7 @@ public class Lambda {
             }
         }
 
+        //Affichage des notes par élève et par matière. Affichage de la moyenne par matière.
         for (int i = 0; i < nbOfStudents; i++) {
             System.out.println("\n Résultats de l'élève n° " + (i + 1) + " : \n");
             for (int j = 0; j < nbOfSubjects; j++) {
@@ -44,7 +51,7 @@ public class Lambda {
                 }
 
                 double average = sum / gradesArray[i][j].size();
-                System.out.println("Notes de la matière " + (j + 1) + " : " + gradesArray[i][j]);
+                System.out.println( (gradesArray[i][j].size() > 1 ? "Notes " : "Note ") + "de la matière " + (j + 1) + " : " + gradesArray[i][j]);
                 System.out.println("Moyenne de la matière " + (j + 1) + " : "  + average);
 
             }
